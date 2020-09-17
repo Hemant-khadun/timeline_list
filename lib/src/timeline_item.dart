@@ -25,14 +25,10 @@ abstract class TimelineItem extends StatelessWidget {
     if (this is TimelineItemCenter) return model.icon;
     if (model.icon == null) return null;
     // ignore icon size if timeline is not centered.
-    return Icon(
-      model.icon.icon,
-      color: model.icon.color,
-      textDirection: model.icon.textDirection,
-      key: model.icon.key,
-      semanticLabel: model.icon.semanticLabel,
-      size: TimelineBoxDecoration.DEFAULT_ICON_SIZE,
-    );
+    // changing icon to image
+    return Image.network(
+      model.icon,
+      }
   }
 }
 
