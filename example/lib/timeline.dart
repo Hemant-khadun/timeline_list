@@ -101,6 +101,22 @@ class _TimelinePageState extends State<TimelinePage> {
         isFirst: i == 0,
         isLast: i == doodles.length,
         iconBackground: doodle.iconBackground,
-        icon: doodle.icon);
+      // the doodle.icon must be an url 
+        icon: Material( 
+          elevation: 4.0,
+          shape: CircleBorder(),
+          clipBehavior: Clip.hardEdge,
+          color: Colors.transparent,
+          child: Ink.image(
+            image: NetworkImage(doodle.icon),
+            fit: BoxFit.cover,
+            width: 40.0,
+            height: 40.0,
+            child: InkWell(
+              onTap: () {},
+            ),
+          ),
+        )
+    );
   }
 }
