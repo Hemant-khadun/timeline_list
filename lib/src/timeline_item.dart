@@ -21,14 +21,12 @@ abstract class TimelineItem extends StatelessWidget {
     return properties.iconSize ?? TimelineBoxDecoration.DEFAULT_ICON_SIZE;
   }
 
-  Icon get icon {
+  Widget get icon {
     if (this is TimelineItemCenter) return model.icon;
     if (model.icon == null) return null;
     // ignore icon size if timeline is not centered.
     // changing icon to image
-    return Image.network(
-      model.icon,
-      }
+    return model.icon;
   }
 }
 
